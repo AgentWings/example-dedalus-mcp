@@ -12,57 +12,58 @@ No authentication required - all endpoints are public.
 from typing import Any
 
 from dedalus_mcp import HttpMethod, HttpRequest, get_context, tool
-from dedalus_mcp.auth import Connection
+from dedalus_mcp.auth import Connection, Credentials
 from pydantic import BaseModel
 
 
 # --- Connections (one per API host) ------------------------------------------
+# Note: Open-Meteo is public/free, but Dedalus pipeline requires credentials binding
 
 forecast_api = Connection(
     name="open_meteo_forecast",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://api.open-meteo.com",
 )
 
 archive_api = Connection(
     name="open_meteo_archive",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://archive-api.open-meteo.com",
 )
 
 air_quality_api = Connection(
     name="open_meteo_air_quality",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://air-quality-api.open-meteo.com",
 )
 
 marine_api = Connection(
     name="open_meteo_marine",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://marine-api.open-meteo.com",
 )
 
 flood_api = Connection(
     name="open_meteo_flood",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://flood-api.open-meteo.com",
 )
 
 seasonal_api = Connection(
     name="open_meteo_seasonal",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://seasonal-api.open-meteo.com",
 )
 
 ensemble_api = Connection(
     name="open_meteo_ensemble",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://ensemble-api.open-meteo.com",
 )
 
 geocoding_api = Connection(
     name="open_meteo_geocoding",
-    credentials=None,
+    credentials=Credentials(token="OPEN_METEO_TOKEN"),
     base_url="https://geocoding-api.open-meteo.com",
 )
 
